@@ -1,0 +1,17 @@
+Question 1:
+
+1
+
+8
+
+8
+
+10
+
+1
+
+Question 2:
+
+Global scope is a general part of browser memory that allows other local scopes have access to its variables and objects defined on it.
+
+Local scope is a part of browser memory that its definitions has a life cicle only inside that scope defined by curly braces. 

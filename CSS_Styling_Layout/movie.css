@@ -1,0 +1,84 @@
+body {
+    background-image: url('./images/background.png');
+    background-repeat: repeat;
+    margin: 0;
+}
+.banner {
+    position: relative;
+    width: 100vw;
+    background-image: url('./images/bannerbg.png');
+    background-repeat: repeat-x;
+}
+.banner img{
+    margin: 0 auto;
+    display: block;
+}
+h1 {
+    text-align: center;
+    text-shadow: 3px 3px 3px #999;
+}
+aside {
+    float: right;
+    width: 30%;
+    height: auto;
+    background-color: darkolivegreen;
+}
+aside dt{
+    font-weight: bold;
+    padding: 4px 0;
+}
+.hero img {
+    border-top-right-radius: 20px;
+    width: 100%;
+}
+.container{
+    border:4px solid #999;
+    border-radius: 20px;
+    width: 800px;
+    height: 100%;
+    margin: 0 auto;
+}
+.rotten{
+    color: red;
+    font-size: 48pt;
+    font-weight: bold;
+    vertical-align: top;
+    display: inline-block;
+    height: 83px;
+    width: 100%;
+    background-image: url('./images/rbg.png');
+    background-repeat: repeat-x;
+    border-top-left-radius: 20px;
+}
+.rotten img{
+    border-top-left-radius: 20px;
+}
+.rotten div{
+    display: inline;
+    vertical-align: super;
+}
+section.comments {
+    width: 70%;
+    height: 1400px;
+}
+section.comments .cards{
+    column-count: 2;
+    column-gap: 20px;
+    margin: 10px;
+}
+section.comments p.foot{
+   text-align: center;
+   background-color: darkolivegreen;
+}
+.card{
+    display: inline-block;
+}
+.card .card-top{
+    border: 2px solid #999;
+    margin: 5px;
+    border-radius: 10px;
+}
+.footer{
+    display: flex;
+    justify-content: end;
+}

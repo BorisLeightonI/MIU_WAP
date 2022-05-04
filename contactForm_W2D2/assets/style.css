@@ -1,0 +1,42 @@
+body{
+    font-family: "Segoe UI","Helvetica Neue", Arial, sans-serif;
+}
+.container{
+    width: 50%;
+    margin: 100px auto;
+}
+.container form{
+    display: flex;
+    flex-direction: column;
+}
+form input[type='checkbox']{
+    
+}
+form input[type='email'], 
+form input[type='password'],
+form input[type='url'] {
+    padding: 10px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+form div{
+    margin: 15px 0;
+}
+form p{
+    margin-top: 0;
+    color: gray;
+    font-size: small;
+}
+form label{
+    padding: 10px 0;
+}
+form input[type='submit']{
+    width: 20%;
+    height: 50px;
+    border: none;
+    background-color: dodgerblue;
+    color: white;
+    font-size: large;
+    border-radius: 16px;
+    margin: 5px 0;
+}

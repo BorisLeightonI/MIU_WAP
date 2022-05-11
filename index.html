@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- py-script -->
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script> 
+    <py-env>
+        - numpy
+        - matplotlib
+    </py-env>
     <title>Document</title>
 </head>
 <body>
@@ -21,6 +28,12 @@
         <li><a href="/MIU_WAP/CSS_Styling_Layout/htmlSkeleton.html">CSS_Styling_Layout</a></li>
         <li><a href="/MIU_WAP/Responsive_Design_Exercise/index.html">Responsive Design Exercise</a></li>
     </ul>
+
+    <h2>pyscript REPL</h2>
+    <i>Tip: press Shift-Enter to evaluate a cell</i>
+    <div id="repl">
+        <py-repl id="my-repl" auto-generate></py-repl>
+    </div>
 
     <hr>
     <br>

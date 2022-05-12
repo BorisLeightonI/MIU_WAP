@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
         res.send(`
         <link rel="stylesheet" href="/css/day.css">
     
-        <form action="/output" >
+        <form action="/output" method='POST'>
         <label for="name">Name</label>
         <input type="text" name="name" id="name">
         <label for="age">Age</label>
@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
     res.send(`
     <link rel="stylesheet" href="/css/night.css">
 
-    <form action="/output" >
+    <form action="/output" method='POST'>
     <label for="name">Name</label>
     <input type="text" name="name" id="name">
     <label for="age">Age</label>
@@ -36,17 +36,6 @@ app.get('/', (req, res) => {
 
   
 });
-
-// app.use('/output', (req, res, next)=>{
-//     console.log(req.body);
-//     let name = req.query.name;
-//     let age = req.query.age;
-//     if (!name && !age) {
-//         name = "person";
-//         age = 0;
-//     }
-//     res.redirect(`/output?name=${name}&age=${age}`);
-// });
 app.get('/output', (req, res) => {
     let name = req.query.name;
     let age = req.query.age;
@@ -55,9 +44,19 @@ app.get('/output', (req, res) => {
         age = 0;
     }
 
-    res.send(`Welcome ${name} you are ${age} years old`);
+    res.send(`Welcome ${name}, from the previous form you are ${age} years old`);
 });
 
-    
+app.use('/output', (req, res, next)=>{
+    console.log(req.body);
+    let name = req.query.name;
+    let age = req.query.age;
+    if (!name && !age) {
+        name = "person";
+        age = 0;
+    }
+    res.redirect(`/output?name=${name}&age=${age}`);
+});
+
 
 app.listen(3000);

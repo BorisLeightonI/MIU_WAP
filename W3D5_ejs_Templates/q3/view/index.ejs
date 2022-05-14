@@ -1,0 +1,45 @@
+<!DOCTYPE html>                                                  view/index.ejs
+<html lang='en'>
+  <head>
+    <meta charset="utf-8">
+    <!-- <link rel="stylesheet" href='/css/day.css' > -->
+    <title>Current time</title>
+  </head>
+  <style>
+    section{
+        display: flex; 
+        flex-wrap: wrap;   
+        gap: 50px;
+    }
+    button{
+      border: none;
+      background: dodgerblue;
+      color: azure;
+    }
+    figcaption{
+      display: flex;
+      justify-content: space-between;
+    }
+    figcaption input[type='number']{
+      width: 28px;
+    }
+  </style>
+  <body>
+    <section>
+      <% for (let item of products) {%>
+        <form action="/addToCart" method="post" id=<%=item.id%> class="card">
+          <img src=<%= item.img %> alt="image">
+          <figcaption>
+            <%= item.name %>
+            <input type="number" name="quantity" id="">
+            <button 
+              id=<%=item.id%> 
+              name=<%=item.name.toLowerCase()%> 
+              value=<%=item.price%> >add to cart</button>
+          </figcaption>
+        </form>
+      <% } %>
+    </section>
+
+  </body>
+</html>

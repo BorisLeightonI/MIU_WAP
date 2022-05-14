@@ -1,0 +1,25 @@
+<!DOCTYPE html>                                                  view/index.ejs
+<html lang='en'>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href=<%= hour>13?'/css/day.css':'/css/night.css'%> >
+    <title>Current time</title>
+  </head>
+  <style>
+    form{
+      /* display: flex;
+      flex-direction: column; */
+      width: 25vw;
+    }
+  </style>
+  <body>
+    This page was loaded at <%= time %>
+    <form action="/result" method='POST'>
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name">
+      <label for="age">Age</label>
+      <input type="number" name="age" id="age">
+      <input type="submit" value="submit">
+    </form>
+  </body>
+</html>

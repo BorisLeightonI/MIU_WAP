@@ -23,6 +23,25 @@
     figcaption input[type='number']{
       width: 28px;
     }
+    aside{
+      position: fixed;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      right: 0;
+      top: 0;
+      width: 150px;
+      height: fit-content;
+      background-color: rgba(1, 122, 122, .5);
+      font-size: small;
+      color: aliceblue;
+    }
+    aside img{
+      width: 70px;
+    }
+    aside p{
+      margin: 0;
+    }
   </style>
   <body>
     <section>
@@ -34,12 +53,23 @@
             <input type="number" name="quantity" id="">
             <button 
               id=<%=item.id%> 
-              name=<%=item.name.toLowerCase()%> 
-              value=<%=item.price%> >add to cart</button>
+              name='id'
+              value=<%=item.id%> >add to cart</button>
           </figcaption>
         </form>
       <% } %>
     </section>
+
+    <aside>
+      <p>Cart</p>
+      <% for(let item of addCart){ %>
+        <figure>
+          <img src=<%= products[item.id-1].img %> alt="">
+          <p><%= products[item.id-1].name %></p>
+          <p><%= item.quantity %></p>
+        </figure>
+      <% } %> 
+    </aside>
 
   </body>
 </html>

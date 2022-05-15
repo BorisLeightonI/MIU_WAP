@@ -7,6 +7,7 @@ app.set('views', path.join(__dirname, "view"));
 console.log(path.join(__dirname));
 app.use('/css',express.static('css'))
 app.use(express.urlencoded());
+let addCart = [];
 
 app.get('/', (req, res) => {
   let products = [
@@ -44,7 +45,8 @@ app.get('/', (req, res) => {
   res.render("index", {products});
 });
 app.post('/addToCart', (req, res)=>{
-  console.log(req.body);
+  addCart.push(req.body)
+  console.log(addCart);
   res.redirect('/');
 });
 app.listen(3000);

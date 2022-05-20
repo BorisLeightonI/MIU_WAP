@@ -1,0 +1,16 @@
+:root{
+    --R: 100px;
+}
+.circle{
+    background-color: darkcyan;
+    border-radius: 50%;
+    /* width: var(--R);
+    height: var(--R); */
+    position: absolute;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 15vw;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment W3D1</title>
+</head>
+<body>
+    <style>
+        body{background: #222;color: beige;}
+    </style>
+    <h1>Inheritance Exercices</h1>
+    <h2>look at the console</h2>
+    <h3>please turn on Logs and Info</h3>
+
+    <script>
+        console.info('Exercice 1');
+        String.prototype.filter = function(banned){
+            return this.replace(banned,'');
+        }
+        console.log("This house is not nice!".filter('not'));
+/**************************************************************/
+console.info('Exercice 2');
+Array.prototype.bubbleSort = function(){
+    let array = this,
+        n = array.length;
+
+    for (let i = 0; i < n-1; i++) {
+        for (let j = 0; j < n-i-1; j++) {
+            if(array[j]>array[j+1]){
+                let temp = array[j];
+                array[j] = array[j+1];
+                array[j+1] = temp;
+            }
+            
+        }
+        
+    }
+
+    return array;
+}
+let testArr = [7,2,6,4,5];
+console.log('Unordered:',testArr);
+console.log('With BubbleSort:',testArr.bubbleSort())
+/*************************************************************/
+console.info('Exercice 3');
+const Person = function() {};
+
+Person.prototype.initialize = function(name, age)
+{
+    this.name = name;
+    this.age = age;
+}
+
+Person.prototype.describe = function()
+{
+    return this.name + ", " + this.age + " years old.";
+}
+
+const Teacher = function(){}
+Teacher.prototype = new Person();
+Teacher.prototype.teach = function(subject){
+    console.log(`${this.name} is now teaching ${subject}`);
+}
+
+let tp = new Teacher();
+tp.initialize('Jon', 55);
+tp.teach('Inheritance');
+    </script>
+    
+</body>
+</html>

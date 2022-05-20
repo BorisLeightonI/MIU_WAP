@@ -18,26 +18,23 @@ if (process.env.NODE_ENV !== 'test') app.use(logger(':method :url'))
 // for signing the cookies.
 app.use(cookieParser('salt for cooking'))
 
+
 // parses x-www-form-urlencoded
 app.use(express.urlencoded({ extended: false }))
+// this is for req.body
 
 app.use(express.static('views'))
 app.set('view engine', 'ejs')
 
-app.get('/', function(req, res){
 
-  res.render('form')
-  // if (req.cookies.remember) {
-  //   res.send('Remembered :). Click to <a href="/forget">forget</a>!.');
-  // } else {
-  //   res.send('<form method="post"><p>Check to <label>'
-  //     + '<input type="checkbox" name="remember"/> remember me</label> '
-  //     + '<input type="submit" value="Submit"/>.</p></form>');
-  // }
+app.get('/', function(req, res){
+  res.render('form', {req})
 });
 
 app.post('/', (req, res)=>{
-
+  console.log('post: req.body ',req.body);
+  res.cookie(req.body.key, req.body.value);
+  res.redirect('/');
 });
 
 app.get('/forget', function(req, res){

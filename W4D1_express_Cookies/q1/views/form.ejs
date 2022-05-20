@@ -1,6 +1,40 @@
 <h4>Add a cookie key/value </h4>
-<form action="" method="post">
-    <input type="text" name="" placeholder="key">
-    <input type="text" name="" id="" placeholder="value">
+<form action="/" method="post">
+    <input type="text" name="key" placeholder="key">
+    <input type="text" name="value" id="" placeholder="value">
     <button>Send post</button>
 </form>
+
+<style>
+    table{
+        width: 25vw;
+        text-align: center;
+        font-size: large;
+    }
+    table, th, td{
+        border: 1px solid grey;
+        border-collapse: collapse;
+    }
+    caption{padding-top: 25px;font-size: small;}
+</style>
+
+<p>cookies <%= Object.entries(req.cookies) %></p> 
+<%= console.log('req.body', req.body) %> 
+<%= console.log('req.cookies', req.cookies) %> 
+
+
+<table>
+    <tr>
+        <th>Key</th>
+        <th>Value</th>
+    </tr>
+    <% if(req.cookies){ %> 
+        <% for(let key in req.cookies){ %> 
+            <tr>
+                <td><%= key %> </td>
+                <td><%= req.cookies[key] %> </td>
+            </tr>
+        <% } %> 
+    <% } %> 
+    <caption>Cookies</caption>
+</table>
